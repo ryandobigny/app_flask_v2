@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block title %}
+Accueil - Mon Site de Jouets
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1> Bienvenue à votre site de jouets </h1>
+        <p>
+            Remplir le formulaire ci-dessous avec un nom d'utilisateur valide:
+        </p>
+        <p> Le nom d'utilisateur doit contenir:
+            <ol>
+                <li>Une lettre majuscule quelque part.</li>
+                <li>Une lettre minuscule quelque part.</li>
+                <li>Un chiffre à la fin </li>
+            </ol>
+        </p>             
+    </div>
+    <div class="row mt-3">
+        <form method="POST" action="{{url_for('verification')}}">
+            <label for="'nomUser">Nom utilisateur : </label>
+            <input type="text" name="nomUser" id="nomUser">
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

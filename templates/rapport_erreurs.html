@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {# Génération du rapport#}
+        <p>Nom envoyé : <strong>{{mdp}}</strong></p>
+        {% if result %}
+            <h4>Succès !</h4>
+        {% else %}
+            <p>Echec :</p>
+            <ul>
+                {% if not letter_min %}
+                    <li>Pas de <strong>minuscule</strong></li>
+                {% endif %}
+                {% if not letter_maj %}
+                    <li>Pas de <strong>MAJUSCULE</strong></li>
+                {% endif %}
+                {% if not nb %}
+                    <li>Pas de <strong>chiffre à la fin</strong></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
